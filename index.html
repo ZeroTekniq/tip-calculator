@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./dist/styles.css">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -15,30 +16,77 @@
   </style>
 </head>
 <body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <header>
+      <img src="./images/logo.svg" alt="logo" class="logo">
+    </header>
+
+  <main>
+      <div class="main-wrapper">
+        <form action="">
+          <div class="input-wrapper">
+            <label class="heading" for="bill">Bill</label>
+            <img class="icon-dollar" src="./images/icon-dollar.svg" alt="">
+            <input type="text" name="bill" id="bill" placeholder="0">
+          </div>
+        </form>
+        <section class="tip-selection">
+          <h2 class="heading">Select Tip %</h2>
+          <ul>
+            <div class="tip-button-container">
+              <li><button class="tip-button five">5%</button></li>
+              <li><button class="tip-button ten">10%</button></li>
+              <li><button class="tip-button fifteen">15%</button></li>
+              <li><button class="tip-button twenty-five">25%</button></li>
+              <li><button class="tip-button fifty">50%</button></li>
+              <li><button class="tip-button custom">Custom</button></li>
+            </div>
+          </ul>
+        </section>
+        <form action="">
+          <div class="input-wrapper">
+            <label class="heading" for="people">Number of People</label>
+            <img class="icon-person" src="./images/icon-person.svg" alt="">
+            <input type="text" name="bill" id="people" placeholder="0">
+          </div>
+        </form>
+
+        <section class="tip-card-container">
+          <div class="calculations">
+            <p>
+              <div class="calculations__flexbox">
+                <div class="calculations__text-flexbox">
+                  Tip Amount
+                  <span>/ person</span>
+                </div>
+            </p>
+                <text class="calculations__amounts">$0.00</text>
+              </div>
+            
+          </div>
+          <div class="calculations">
+            <p>
+              <div class="calculations__flexbox">
+                <div class="calculations__text-flexbox">
+                  Total
+                  <span>/ person</span>
+                </div>
+            </p>
+                <text class="calculations__amounts">$0.00</text>
+              </div>
+            
+          </div>
+          <button class="calculations__reset-button">Reset</button>
+        </section>
+
+      </div>
+  </main>
+  
+  <!-- <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer> -->
 </body>
 </html>

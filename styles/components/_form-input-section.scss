@@ -1,0 +1,55 @@
+@use '../globals' as g;
+
+
+.main-wrapper {
+    margin-inline: auto;
+    max-width: 38rem;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    border-radius: 1.5625rem 1.5625rem 0 0;
+    background-color: var(--clr-white);
+    padding-block: g.$spacing-300;
+}
+
+input {
+    margin-top: g.$spacing-100;
+    margin-bottom: g.$spacing-400;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    width: 19.4375rem;
+    height: g.$spacing-600;
+    @include g.text-preset-3;
+    border: none;
+    border-radius: 0.3125rem;
+    padding: g.$spacing-200;
+    background-color: var(--clr-grey-50);
+    text-align: end;
+}
+
+input::placeholder {
+    @include g.text-preset-3;
+    color: var(--clr-grey-900);
+    opacity: 0.35;
+    text-align: end;
+}
+
+.icon-dollar {
+    width: 0.615rem;
+    height: 0.966rem;
+    z-index: 1;
+    position: absolute;
+    margin: g.$spacing-200;
+    margin-top: g.$spacing-300 ;
+}
+
+.icon-person {
+    width: 0.966rem;
+    height: 0.966rem;
+    z-index: 1;
+    position: absolute;
+    margin: g.$spacing-200;
+    margin-top: g.$spacing-300 ;
+}   

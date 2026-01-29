@@ -1,0 +1,52 @@
+@use '../globals' as g;
+
+.tip-card-container {
+    width: 20.4375rem;
+    height: 16.0625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--clr-green-900);
+    border-radius: 0.9375rem;
+    padding: g.$spacing-300;
+}
+
+.calculations {
+    @include g.text-preset-5;
+    color: var(--clr-white);
+
+    &__flexbox {
+        display: flex;
+        flex-direction: row;
+        
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    &__text-flexbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__reset-button {
+        width: 100%;
+        height: 3rem;
+        @include g.text-preset-4;
+        text-transform: uppercase;
+        color: var(--clr-green-800);
+        background-color: var(--clr-green-750);
+        border: none;
+        border-radius: 0.3125rem
+    }
+
+    &__amounts {
+        @include g.text-preset-2;
+        color: var(--clr-green-400);
+        letter-spacing: -0.04169rem
+    }
+}
+
+span {
+    @include g.text-preset-6;
+    color: var(--clr-grey-400);
+}

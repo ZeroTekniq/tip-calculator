@@ -1,0 +1,40 @@
+@use '../globals' as g;
+
+.tip-selection {
+    max-width: 28.5625rem;
+    display: grid;
+    justify-content: center;
+    margin-bottom: g.$spacing-400;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.tip-button-container {
+    max-width: 28.5625rem;
+    display: grid;
+    grid-template-columns: repeat(2, 9.1875rem);
+    grid-template-rows: repeat(3, 3rem);
+    gap: g.$spacing-200;
+}
+
+.tip-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9.1875rem;
+    height: g.$spacing-600;
+    @include g.text-preset-3;
+    border: none;
+    border-radius: 0.3125rem;
+    color: var(--clr-white);
+    background-color: var(--clr-green-900);
+}
+
+.custom {
+    background-color: var(--clr-grey-50);
+    color: var(--clr-grey-550);
+}
+
