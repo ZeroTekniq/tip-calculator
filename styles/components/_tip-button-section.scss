@@ -31,10 +31,32 @@ ul {
     border-radius: 0.3125rem;
     color: var(--clr-white);
     background-color: var(--clr-green-900);
+
+    &__number {
+        @include g.text-preset-3;
+        color: var(--clr-white);
+    }
+}
+
+.tip-button:hover {
+     cursor: pointer;
+}
+
+.five:hover, .ten:hover, .fifteen:hover, .twenty-five:hover, .fifty:hover {
+    color: var(--clr-green-900);
+    background-color: var(--clr-green-200);
 }
 
 .custom {
     background-color: var(--clr-grey-50);
     color: var(--clr-grey-550);
+}
+
+.active {
+    background-color: var(--clr-green-400);
+}
+
+.inactive:disabled {
+    pointer-events: none;
 }
 

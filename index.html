@@ -23,7 +23,7 @@
 
   <main>
       <div class="main-wrapper">
-        <form action="">
+        <form action="" id="form">
           <div class="input-wrapper">
             <label class="heading" for="bill">Bill</label>
             <img class="icon-dollar" src="./images/icon-dollar.svg" alt="">
@@ -34,20 +34,20 @@
           <h2 class="heading">Select Tip %</h2>
           <ul>
             <div class="tip-button-container">
-              <li><button class="tip-button five">5%</button></li>
-              <li><button class="tip-button ten">10%</button></li>
-              <li><button class="tip-button fifteen">15%</button></li>
-              <li><button class="tip-button twenty-five">25%</button></li>
-              <li><button class="tip-button fifty">50%</button></li>
-              <li><button class="tip-button custom">Custom</button></li>
+              <li><button class="tip-button five" data-option="five">5%</button></li>
+              <li><button class="tip-button ten" data-option="ten">10%</button></li>
+              <li><button class="tip-button fifteen" data-option="fifteen">15%</button></li>
+              <li><button class="tip-button twenty-five" data-option="twenty-five">25%</button></li>
+              <li><button class="tip-button fifty" data-option="fifty">50%</button></li>
+              <li><button class="tip-button custom" data-option="custom">Custom</button></li>
             </div>
           </ul>
         </section>
-        <form action="">
+        <form action="" id="form">
           <div class="input-wrapper">
             <label class="heading" for="people">Number of People</label>
             <img class="icon-person" src="./images/icon-person.svg" alt="">
-            <input type="text" name="bill" id="people" placeholder="0">
+            <input type="text" name="people" id="people" placeholder="0">
           </div>
         </form>
 
@@ -59,10 +59,9 @@
                   Tip Amount
                   <span>/ person</span>
                 </div>
-            </p>
-                <text class="calculations__amounts">$0.00</text>
+                <text class="calculations__amounts tip">$0.00</text>
               </div>
-            
+            </p>
           </div>
           <div class="calculations">
             <p>
@@ -71,12 +70,11 @@
                   Total
                   <span>/ person</span>
                 </div>
-            </p>
-                <text class="calculations__amounts">$0.00</text>
+                <text class="calculations__amounts total">$0.00</text>
               </div>
-            
+            </p>
           </div>
-          <button class="calculations__reset-button">Reset</button>
+          <button class="calculations__reset-button" id="reset">Reset</button>
         </section>
 
       </div>
@@ -88,5 +86,6 @@
       Coded by <a href="#">Your Name Here</a>.
     </div>
   </footer> -->
+  <script src="./dist/script.js"></script>
 </body>
 </html>

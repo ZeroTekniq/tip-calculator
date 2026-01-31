@@ -39,6 +39,12 @@
         border-radius: 0.3125rem
     }
 
+    &__reset-button:hover {
+        cursor: pointer;
+        background-color: var(--clr-green-200);
+        color: var(--clr-green-900);
+    }
+
     &__amounts {
         @include g.text-preset-2;
         color: var(--clr-green-400);
@@ -49,4 +55,9 @@
 span {
     @include g.text-preset-6;
     color: var(--clr-grey-400);
+}
+
+.active {
+    background-color: var(--clr-green-400);
+    color: var(--clr-white);
 }
