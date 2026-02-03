@@ -119,3 +119,9 @@ input::placeholder {
         width: 23.6875rem;
     }
 }
+
+@media screen and (height >= 79rem) {
+    .wrapper {
+        padding-top: 10.1875rem;
+    }
+}   
