@@ -5,6 +5,8 @@
     gap: 2.554rem;
 }
 
+
+
 .main-wrapper {
     margin-inline: auto;
     max-width: 57.5rem;
@@ -94,7 +96,7 @@ input::placeholder {
 
     .wrapper {
     padding: 10.1875rem 16.25rem 14.9375rem 16.25rem;
-}
+    }
 
     .main-wrapper {
         width: 57.5rem;
@@ -114,6 +116,11 @@ input::placeholder {
             "box2 box4"
             "box3 box4";
     }
+
+    .form-box {
+    padding-top: g.$spacing-200;
+    margin-right: g.$spacing-600;
+}
 
     .input-container {
         width: 23.6875rem;
