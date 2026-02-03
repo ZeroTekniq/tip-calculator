@@ -12,8 +12,6 @@
     padding: g.$spacing-300;
 }
 
-
-
 .calculations {
     @include g.text-preset-5;
     color: var(--clr-white);
@@ -83,9 +81,7 @@ span {
         width: 25.8125rem;
         height: 26.0625rem;
         justify-content: start;
-        
-        margin-right: start;
-        
+        margin-left: g.$spacing-400;
     }
 
     .calculations {

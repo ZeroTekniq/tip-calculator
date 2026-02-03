@@ -1,14 +1,12 @@
 @use '../globals/' as g;
 
 header {
-    margin-top: g.$spacing-400;
+    padding-bottom: 2.554rem;
     width: 100%;
-    height: auto;
-    padding-block: 3.125rem g.$spacing-400;
+    height: 100%;
     display: grid;
     place-items: center;
 }
-
 
 h1 {
     width: 5.4165rem;
@@ -16,4 +14,10 @@ h1 {
     text-transform: uppercase;
     @include g.text-preset-1;
     color: var(--clr-grey-600);
+}
+
+@media screen and (width >= 90rem) {
+    header {
+        padding-bottom: 5.49rem;
+    }
 }
