@@ -1,13 +1,12 @@
 @use '../globals/' as g;
 
 header {
-    
+    margin-top: g.$spacing-400;
     width: 100%;
-    height: 18vh;
+    height: auto;
     padding-block: 3.125rem g.$spacing-400;
     display: grid;
-    // place-items: center;
-    justify-content: center;
+    place-items: center;
 }
 
 

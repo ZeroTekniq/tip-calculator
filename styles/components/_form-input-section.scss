@@ -2,15 +2,18 @@
 
 
 .main-wrapper {
+    margin-top: g.$spacing-400;
     margin-inline: auto;
-    max-width: 38rem;
-    height: 100vh;
+    max-width: 57.5rem;
+    max-height: 210vh;
     display: grid;
     place-items: center;
     border-radius: 1.5625rem 1.5625rem 0 0;
     background-color: var(--clr-white);
     padding-block: g.$spacing-300;
 }
+
+
 
 input {
     margin-top: g.$spacing-100;
@@ -19,7 +22,7 @@ input {
     flex-direction: column;
     justify-content: end;
     align-items: end;
-    width: 19.4375rem;
+    width: 100%;
     height: g.$spacing-600;
     @include g.text-preset-3;
     border: none;
@@ -27,6 +30,16 @@ input {
     padding: g.$spacing-200;
     background-color: var(--clr-grey-50);
     text-align: end;
+}
+.no-spinner {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid var(--clr-green-400);
 }
 
 input::placeholder {
@@ -53,3 +66,47 @@ input::placeholder {
     margin: g.$spacing-200;
     margin-top: g.$spacing-300 ;
 }   
+
+.num-of-people-input-box-error {
+    border: 2px solid var(--clr-orange);
+}
+
+@media screen and (width >= 30rem) {
+    .main-wrapper {
+        width: 38rem;
+        height: 50rem;
+        border-radius: 1.5625rem; 
+        padding-block: g.$spacing-600;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
+@media screen and (width >= 90rem) {
+    .main-wrapper {
+        width: 57.5rem;
+        height: 30.0625rem;
+        padding: g.$spacing-400;
+    }
+
+    .form-container {
+        display: grid;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        width: 52.5rem;
+        height: 26.0625rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+            "box1 box4"
+            "box2 box4"
+            "box3 box4";
+    }
+
+    .input-container {
+        width: 23.6875rem;
+    }
+}

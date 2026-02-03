@@ -1,9 +1,22 @@
 @use '../globals' as g;
 
 .heading {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
+    height: auto;
     @include g.text-preset-5;
     color: var(--clr-grey-500);
     align-self: stretch;
     padding-bottom: g.$spacing-100;
+}
+
+.bill-input-error {
+    display: none;
+    color: var(--clr-orange);
+}
+
+.number-of-people-error {
+    display: none;
+    color: var(--clr-orange);
 }

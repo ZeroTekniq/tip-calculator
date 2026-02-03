@@ -17,68 +17,74 @@
 </head>
 <body>
   
-    <header>
-      <img src="./images/logo.svg" alt="logo" class="logo">
-    </header>
-
-  <main>
-      <div class="main-wrapper">
-        <form action="" id="form">
-          <div class="input-wrapper">
-            <label class="heading" for="bill">Bill</label>
-            <img class="icon-dollar" src="./images/icon-dollar.svg" alt="">
-            <input type="text" name="bill" id="bill" placeholder="0">
-          </div>
-        </form>
-        <section class="tip-selection">
-          <h2 class="heading">Select Tip %</h2>
-          <ul>
-            <div class="tip-button-container">
-              <li><button class="tip-button five" data-option="five">5%</button></li>
-              <li><button class="tip-button ten" data-option="ten">10%</button></li>
-              <li><button class="tip-button fifteen" data-option="fifteen">15%</button></li>
-              <li><button class="tip-button twenty-five" data-option="twenty-five">25%</button></li>
-              <li><button class="tip-button fifty" data-option="fifty">50%</button></li>
-              <li><button class="tip-button custom" data-option="custom">Custom</button></li>
+    <div class="wrapper">
+      <header>
+        <img src="./images/logo.svg" alt="logo" class="logo">
+      </header>
+      
+        <main>
+        <div class="main-wrapper">
+          <div class="form-container">
+            <div class="input-container">
+              <form action="" id="form">
+                <div class="input-wrapper" style="grid-area: box1">
+                  <label class="heading bill-label" for="bill">Bill<span class="bill-input-error">Input Numbers Only</span></label>
+                  <img class="icon-dollar" src="./images/icon-dollar.svg" alt="">
+                  <input class="no-spinner" type="number" name="bill" id="bill" placeholder="0">
+                </div>
+              </form>
+              <section class="tip-selection" style="grid-area: box2">
+                <h2 class="heading">Select Tip %</h2>
+                <ul>
+                  <div class="tip-button-container">
+                    <li><button class="tip-button five" data-option="five">5%</button></li>
+                    <li><button class="tip-button ten" data-option="ten">10%</button></li>
+                    <li><button class="tip-button fifteen" data-option="fifteen">15%</button></li>
+                    <li><button class="tip-button twenty-five" data-option="twenty-five">25%</button></li>
+                    <li><button class="tip-button fifty" data-option="fifty">50%</button></li>
+                    <li><button class="tip-button custom" data-option="custom">Custom</button></li>
+                  </div>
+                </ul>
+              </section>
+              <form action="" id="form">
+                <div style="grid-area: box3">
+                  <div class="input-wrapper">
+                    <label class="heading" for="people">Number of People<span class="number-of-people-error">Can't be zero</span></label>
+                    <img class="icon-person" src="./images/icon-person.svg" alt="">
+                    <input class="no-spinner num-of-people-input-box" type="number" name="people" id="people" placeholder="0">
+                  </div>
+                </div>
+              </form>
             </div>
-          </ul>
-        </section>
-        <form action="" id="form">
-          <div class="input-wrapper">
-            <label class="heading" for="people">Number of People</label>
-            <img class="icon-person" src="./images/icon-person.svg" alt="">
-            <input type="text" name="people" id="people" placeholder="0">
-          </div>
-        </form>
-
-        <section class="tip-card-container">
-          <div class="calculations">
-            <p>
-              <div class="calculations__flexbox">
-                <div class="calculations__text-flexbox">
-                  Tip Amount
-                  <span>/ person</span>
-                </div>
-                <text class="calculations__amounts tip">$0.00</text>
+            <section class="tip-card-container" style="grid-area: box4">
+              <div class="calculations">
+                <p>
+                  <div class="calculations__flexbox">
+                    <div class="calculations__text-flexbox">
+                      Tip Amount
+                      <span>/ person</span>
+                    </div>
+                    <text class="calculations__amounts tip">$0.00</text>
+                  </div>
+                </p>
               </div>
-            </p>
-          </div>
-          <div class="calculations">
-            <p>
-              <div class="calculations__flexbox">
-                <div class="calculations__text-flexbox">
-                  Total
-                  <span>/ person</span>
-                </div>
-                <text class="calculations__amounts total">$0.00</text>
+              <div class="calculations">
+                <p>
+                  <div class="calculations__flexbox">
+                    <div class="calculations__text-flexbox">
+                      Total
+                      <span>/ person</span>
+                    </div>
+                    <text class="calculations__amounts total">$0.00</text>
+                  </div>
+                </p>
               </div>
-            </p>
+              <button class="calculations__reset-button" id="reset">Reset</button>
+            </section>
           </div>
-          <button class="calculations__reset-button" id="reset">Reset</button>
-        </section>
-
-      </div>
-  </main>
+        </div>
+        </main>
+    </div>
   
   <!-- <footer>
     <div class="attribution">
