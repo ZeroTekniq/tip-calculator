@@ -11,9 +11,10 @@
 
 </head>
 <body>
-      <h1 class="sr-only">Tip Calculator</h1>
+      
       <div class="wrapper">
         <header>
+          <h1 class="sr-only">Tip Calculator</h1>
           <img src="./images/logo.svg" alt="logo" class="logo">
         </header>
         
@@ -32,12 +33,12 @@
                 <section class="tip-selection" style="grid-area: box2">
                   <h2 class="heading">Select Tip %</h2>
                   <div class="tip-button-container">
-                    <button class="tip-button five" data-option="five">5%</button>
-                    <button class="tip-button ten" data-option="ten">10%</button>
-                    <button class="tip-button fifteen" data-option="fifteen">15%</button>
-                    <button class="tip-button twenty-five" data-option="twenty-five">25%</button>
-                    <button class="tip-button fifty" data-option="fifty">50%</button>
-                    <button class="tip-button custom" data-option="custom">Custom</button>
+                    <button class="tip-button five" data-option="five" aria-label="Select 5% tip">5%</button>
+                    <button class="tip-button ten" data-option="ten" aria-label="Select 10% tip">10%</button>
+                    <button class="tip-button fifteen" data-option="fifteen" aria-label="Select 15% tip">15%</button>
+                    <button class="tip-button twenty-five" data-option="twenty-five" aria-label="Select 25% tip">25%</button>
+                    <button class="tip-button fifty" data-option="fifty" aria-label="Select 50% tip">50%</button>
+                    <button class="tip-button custom" data-option="custom" aria-label="Select custom tip">Custom</button>
                   </div>
                 </section>
                 <form action="" id="form">
@@ -59,7 +60,7 @@
                       Tip Amount
                       <span>/ person</span>
                     </div>
-                    <text class="calculations__amounts tip">$0.00</text>
+                    <p class="calculations__amounts tip">$0.00</p>
                   </div>
                 </p>
               </div>
@@ -70,7 +71,7 @@
                       Total
                       <span>/ person</span>
                     </div>
-                    <text class="calculations__amounts total">$0.00</text>
+                    <p class="calculations__amounts total">$0.00</p>
                   </div>
                 </p>
               </div>
