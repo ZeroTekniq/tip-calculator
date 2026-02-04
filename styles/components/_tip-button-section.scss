@@ -46,8 +46,37 @@ ul {
     background-color: var(--clr-green-200);
 }
 
-.custom {
+.custom-tip {
+    margin: 0;
     background-color: var(--clr-grey-50);
+    color: var(--clr-grey-550);
+}
+
+.custom {
+    
+    position: relative;
+    display: inline-block;
+    
+}
+.custom input {
+    
+    padding-right: 30px;
+}
+
+.custom:focus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    outline: 2px solid var(--clr-green-400);
+}
+.custom::after {
+    content: '%';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    @include g.text-preset-3;
     color: var(--clr-grey-550);
 }
 
@@ -75,10 +104,13 @@ ul {
 
     .tip-button-container {
         width: 100%;
-        grid-template-columns: repeat(3, 7.25rem);
+        grid-template-columns: repeat(3, 7.45rem);
     }
     .tip-button {
-        width: 7.25rem;
+        width: 7.45rem;
+    }
+    .custom-tip::placeholder {
+        @include g.text-preset-4;
     }
 }
 

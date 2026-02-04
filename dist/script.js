@@ -3,6 +3,7 @@ const form = document.querySelector('#form');
 const billInputError = document.querySelector('.bill-input-error');
 const numberOfPeopleError = document.querySelector('.number-of-people-error');
 const buttons = document.querySelectorAll('.tip-button');
+const customTipInput = document.getElementById('custom');
 const tipAmount = document.querySelector('.tip');
 const totalAmount = document.querySelector('.total');
 const billLabel = document.querySelector('.bill-label');
@@ -13,8 +14,6 @@ const custom = document.querySelector('.custom');
 let resetButton = document.getElementById('reset');
 let percentage = 0;  
 
-
-
 const resetForm = () => {
     resetButtonAndCards();
     // Reset values to 0
@@ -22,12 +21,17 @@ const resetForm = () => {
         bill = document.querySelector('#bill').value = '';
         numberOfPeople = document.querySelector('#people').value = '';
      // Reinitialize input values
+        customTipInput.value = '';
         bill = document.querySelector('#bill'); 
         bill.disabled = false;
         numberOfPeople = document.querySelector('#people');
         numOfPeopleInputBox.classList.remove('num-of-people-input-box-error');
         numberOfPeople.disabled = false;
     // Reset Labels
+        resetButton.classList.remove('active');
+        billLabel.style.color = 'var(--clr-grey-500)';
+        billInputError.style.display = 'none';
+        numberOfPeopleError.style.display = 'none';
         console.log('Form reset');
 }
 
@@ -41,13 +45,12 @@ const resetButtonAndCards = () => {
             btn.classList.remove('inactive.no-touch');
         })
 }
+
 const resetButtonPressed = (button) => {
     resetButton.addEventListener('click', () => {
+        if (!button) return;
         button.classList.remove('active');
-        resetButton.classList.remove('active');
-        billLabel.style.color = 'var(--clr-grey-500)';
-        billInputError.style.display = 'none';
-        numberOfPeopleError.style.display = 'none';
+        
         resetForm();
     })
 }
@@ -63,7 +66,6 @@ const disableButtons = () => {
 }
 
 const billInputIsNotValid = () => {
-    
     let valid = false;
     if (bill.value !== '' && (!isNaN(bill.value))) {
         valid = true;
@@ -77,12 +79,10 @@ const billInputIsNotValid = () => {
     return valid;
 }
 
-
 const numberOfPeopleIsNotValid = () => {
     let valid = false;
     if (numberOfPeople.value !== '' && (!isNaN(numberOfPeople.value))) {
         valid = true;
-        
     } else {
         numberOfPeople.disabled = false;
         resetButtonAndCards();
@@ -94,22 +94,50 @@ const numberOfPeopleIsNotValid = () => {
     return valid;
 }
 
+const getCustomTip = () => {
+    customTipInput.addEventListener('focus', () => {
+        convertToNumbers();
+        customTipInput.disabled = false;
+        customTipInput.style.textAlign = 'center';
+        customTipInput.value = '';
+        customTipInput.style.color = 'var(--clr-grey-500)';
+        
+    })
+    customTipInput.addEventListener('input', (e) => {
+        customTipInput.disabled = false;
+        percentage = e.target.value;
+        console.log(percentage);
+        convertToNumbers();
+        resetButtonPressed();
+    })
+}
+
 const activateButton = (button) => {
     buttons.forEach(btn => {
         btn.classList.remove('active');
     })
-    resetButton.classList.add('active');
-    button.classList.add('active');
-    disableButtons();
-    resetButtonPressed(button);
+    if (button.classList.contains('custom-tip')) {
+        console.log('Custom tip selected');
+        getCustomTip();
+        // return;
+    }else {
+        resetButton.classList.add('active');
+        button.classList.add('active');
+        disableButtons();
+        resetButtonPressed(button);
+    }
 }
 
 const calcTotalPerPerson = (tipPerPerson, bill, numberOfPeople) => {
     const total = tipPerPerson + bill / numberOfPeople;
     totalAmount.textContent = '$' + total.toFixed(2);
+    resetButtonPressed();
 }
 
 const calcTipAmount = (percentage, bill, numberOfPeople) => {
+    bill = parseFloat(bill.value);
+    numberOfPeople = parseFloat(numberOfPeople.value);
+    console.log(percentage, bill, numberOfPeople);
     const tip = bill * percentage;
     const tipPerPerson = tip / numberOfPeople;
     tipAmount.textContent = '$' + tipPerPerson.toFixed(2);
@@ -117,9 +145,12 @@ const calcTipAmount = (percentage, bill, numberOfPeople) => {
 }
 
 const convertToNumbers = () => {
-   percentage = parseFloat(percentage / 100);
-   bill = parseFloat(bill.value);
-   numberOfPeople = parseFloat(numberOfPeople.value);
+   if (percentage === '' || isNaN(percentage)) {
+       percentage = 0;
+   } else {
+       percentage = parseFloat(percentage / 100);
+       console.log(percentage);
+    }
    calcTipAmount(percentage, bill, numberOfPeople);
 }
   
@@ -133,7 +164,6 @@ const getPercentageNumber = () => {
                 'custom': custom
             };
     buttons.forEach(button => {
-        
         button.addEventListener('click', () => {
             activateButton(button);
             if (numberOfPeopleIsNotValid() === false && billInputIsNotValid() === false) {
@@ -148,9 +178,8 @@ const getPercentageNumber = () => {
              else {
                 buttons.disabled = true;
                 percentage = option[button.dataset.option];
-                convertToNumbers(percentage);
+                convertToNumbers();
             }
-            
         })
     })
 }
